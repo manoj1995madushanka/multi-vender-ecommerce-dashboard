@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Install dependencies
+
+### `npm i apexcharts react-apexcharts axios jwt-decode moment`
+### `npm i react-hot-toast react-icons @reduxjs/toolkit react-redux`
+### `npm i react-spinners react-window redux-thunk socket.io-client`
+
+react-hot-toast used for manage notifications
+react-spinners used for manage loaders
+react-window used for manage large data rendering
