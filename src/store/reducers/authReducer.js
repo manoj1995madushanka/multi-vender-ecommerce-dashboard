@@ -1,4 +1,18 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
+// to handle async action in redux
+export const admin_login = createAsyncThunk(
+  'auth/admin_login',
+  async(info) => {
+    console.log(info)
+    try {
+     /* const {data} = await api.post('/admin_login', info,{withCredentials:true})
+      console.log(data)*/
+    }catch (error){
+
+    }
+  }
+)
 
 export const authReducer = createSlice({
   name: 'auth',
