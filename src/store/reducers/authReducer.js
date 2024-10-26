@@ -9,7 +9,8 @@ export const authReducer = createSlice({
     userInfo: ''
   },
   reducers: {},
-  extraReducers: {}
+  extraReducers: () => {
+  }
 })
 
 export default authReducer.reducer;
