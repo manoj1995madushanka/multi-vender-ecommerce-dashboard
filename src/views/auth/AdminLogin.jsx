@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {admin_login} from "../../store/reducers/authReducer";
+import {PropagateLoader} from "react-spinners";
 
 const AdminLogin = () => {
 
   const dispatch = useDispatch()
+  // selecting auth state of auth reducer
+  const {loader} = useSelector(state=>state.auth)
 
   const [state, setState] = useState({
     email: "",
@@ -22,6 +25,14 @@ const AdminLogin = () => {
     e.preventDefault();
     dispatch(admin_login(state))
     console.log(state)
+  }
+
+  const overrideStyle = {
+    display : 'flex',
+    margin:'0 auto',
+    height:'24px',
+    justifyContent:'center',
+    alignItems:'center'
   }
 
   return (
@@ -51,8 +62,11 @@ const AdminLogin = () => {
             </div>
 
             <button
+              disabled={loader? true:false}
               className="bg-slate-800 w-full hover:shadow-blue-300/hover:shadow-lg text-white rounded-md px-7 py-2 mb-3">
-              Login
+              {
+                loader? <PropagateLoader color='#fff' cssOverride={overrideStyle}/> : 'Login'
+              }
             </button>
 
           </form>
